@@ -16,7 +16,7 @@ export function LoginForm({ onLoginPress, onSwitchToRegister, isDisabled = true 
       
       <TextInput 
         className='bg-white text-black rounded-lg p-3 w-full border border-black' 
-        placeholder='Email' 
+        placeholder='Email/Usuario' 
       />
       <TextInput 
         className='bg-white text-black rounded-lg p-3 w-full border border-black' 

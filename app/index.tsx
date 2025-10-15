@@ -16,10 +16,12 @@ export default function Index() {
     isLogin
     ?
     <LoginForm 
-    onLoginPress={() => router.navigate('/HomeScreen')} onSwitchToRegister={() => router.navigate('/HomeScreen')}
+    onLoginPress={() => router.navigate('/HomeScreen')} onSwitchToRegister={() => setIsLogin(false)}
     />
     :
-    <RegisterForm onRegisterPress={() => router.navigate('/HomeScreen')} onSwitchToLogin={() => router.navigate('/HomeScreen')}/>
+    <RegisterForm 
+    onRegisterPress={() => router.navigate('/HomeScreen')} onSwitchToLogin={() => setIsLogin(true)}
+    />
   </SafeAreaView>
     )
   }
