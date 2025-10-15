@@ -1,5 +1,5 @@
 import { CustomButton } from '@/components/ui/CustomButton';
-import { CustomText } from '@/components/ui/CustomText';
+import CustomText from "@/components/ui/CustomText"
 import { TextInput, View } from "react-native";
 
 type LoginFormProps = {
@@ -11,8 +11,8 @@ type LoginFormProps = {
 export function LoginForm({ onLoginPress, onSwitchToRegister, isDisabled = true }: LoginFormProps) {
   return (
     <>
-      <CustomText size='large' bold className='h-20'>Regresaste!</CustomText> 
-      <CustomText size='small' className='-mt-8'>Ingresa tus datos para acceder a nuestra app!</CustomText>
+      <CustomText variant='large' >Regristrate!</CustomText> 
+      <CustomText variant='medium'>Ingresa tus datos para acceder a nuestra app!</CustomText>
       
       <TextInput 
         className='bg-white text-black rounded-lg p-3 w-full border border-black' 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
-import { CustomText } from './CustomText';
+import  CustomText  from './CustomText';
 
 interface CustomButtonProps {
     onPress: () => void;
@@ -72,9 +72,7 @@ export const CustomButton = ({
             }
         >
             <CustomText
-                size="button"
-                color={getTextColor()}
-                underline={variant === 'link'}
+                variant='large'
             >
                 {children}
             </CustomText>
