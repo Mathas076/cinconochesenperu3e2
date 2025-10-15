@@ -11,7 +11,7 @@ type LoginFormProps = {
 export function LoginForm({ onLoginPress, onSwitchToRegister, isDisabled = true }: LoginFormProps) {
   return (
     <>
-      <CustomText variant='large' >Regristrate!</CustomText> 
+      <CustomText variant='large' >Inicia sesion!</CustomText> 
       <CustomText variant='medium'>Ingresa tus datos para acceder a nuestra app!</CustomText>
       
       <TextInput 
@@ -20,7 +20,7 @@ export function LoginForm({ onLoginPress, onSwitchToRegister, isDisabled = true 
       />
       <TextInput 
         className='bg-white text-black rounded-lg p-3 w-full border border-black' 
-        placeholder='Password' 
+        placeholder='Contraseña' 
         secureTextEntry 
       />
       
@@ -33,7 +33,7 @@ export function LoginForm({ onLoginPress, onSwitchToRegister, isDisabled = true 
         </CustomButton>
         <CustomButton 
           onPress={onLoginPress} 
-          variant={isDisabled ? 'disabled' : 'secondary'}
+          variant={isDisabled ? 'link' : 'secondary'}
         >
           Iniciar sesión
         </CustomButton>

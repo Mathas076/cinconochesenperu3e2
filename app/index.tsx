@@ -1,30 +1,26 @@
 import CustomText from "@/components/ui/CustomText";
 import { LoginForm } from "@/components/auth/LoginForm";
+import { RegisterForm } from "@/components/auth/RegisterForm";
 import "@/global.css";
 import { useEffect, useState } from "react";
 import { Alert, View } from "react-native";
 import { Link } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useRouter } from 'expo-router';
 export default function Index() {
-  
-  const [isLogin, setIsLogin] = useState<string>("");
-  useEffect(() => {
-    switch (isLogin){
-      case "Login": 
-      Alert.alert("Login");
-      break;
-      case "Register":
-      break;
-    }
-    
-    return () => {
+  const router = useRouter();
+  const [isLogin, setIsLogin] = useState<boolean>(true);
+    return (
       
-    };
-  }, []);
-  return (
-
-    <View className="bg-[#026A75] w-screen h-screen">
-     <Link href="/(home)/HomeScreen">Presionar</Link>
-      <LoginForm onLoginPress={() => setIsLogin("Login")} onSwitchToRegister={() => setIsLogin("Register")}></LoginForm>
-    </View>
-  );
-}
+    <SafeAreaView className="bg-blue-500 flex-1 justify-center items-center">
+    isLogin
+    ?
+    <LoginForm 
+    onLoginPress={() => router.navigate('/HomeScreen')} onSwitchToRegister={() => router.navigate('/HomeScreen')}
+    />
+    :
+    <RegisterForm onRegisterPress={() => router.navigate('/HomeScreen')} onSwitchToLogin={() => router.navigate('/HomeScreen')}/>
+  </SafeAreaView>
+    )
+  }
+      

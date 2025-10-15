@@ -39,7 +39,7 @@ export const CustomButton = ({
             case 'disabled':
                 return 'bg-gray-300 border-black';
             case 'link':
-                return 'bg-transparent border-0';
+                return 'bg-blue-800 border-black';
             default:
                 return 'bg-blue-500 border-black';
         }

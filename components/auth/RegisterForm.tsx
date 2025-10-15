@@ -1,11 +1,17 @@
 import { CustomButton } from '@/components/ui/CustomButton';
 import CustomText from "@/components/ui/CustomText"
 import { TextInput, View } from "react-native";
-export function RegisterForm({ onLoginPress, onSwitchToRegister, isDisabled = true }: RegisterFormProps) {
+
+type RegisterFormProps = {
+    onRegisterPress: () => void;
+    onSwitchToLogin: () => void;
+    isDisabled?: boolean;
+  }
+export function RegisterForm({ onRegisterPress, onSwitchToLogin, isDisabled = true }: RegisterFormProps) {
   return (
     <>
       <CustomText variant='large' >Regristrate!</CustomText> 
-      <CustomText variant='medium'>Ingresa tus datos para acceder a nuestra app!</CustomText>
+      <CustomText variant='medium'>Crea una cuenta para acceder a nuestra app!</CustomText>
       
       <TextInput 
         className='bg-white text-black rounded-lg p-3 w-full border border-black' 
@@ -17,20 +23,20 @@ export function RegisterForm({ onLoginPress, onSwitchToRegister, isDisabled = tr
       />
       <TextInput 
         className='bg-white text-black rounded-lg p-3 w-full border border-black' 
-        placeholder='Password' 
+        placeholder='Contraseña' 
         secureTextEntry 
       />
       
       <View className='flex-row gap-2'>
         <CustomButton 
-          onPress={onSwitchToRegister} 
+          onPress={onSwitchToLogin} 
           variant='link'
         >
-          Iniciar sesión
+          Ya tengo una cuenta
         </CustomButton>
         <CustomButton 
-          onPress={onLoginPress} 
-          variant={isDisabled ? 'disabled' : 'secondary'}
+          onPress={onRegisterPress} 
+          variant={isDisabled ? 'link' : 'secondary'}
         >
           Registrarse
         </CustomButton>
